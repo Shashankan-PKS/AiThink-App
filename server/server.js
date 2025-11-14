@@ -17,7 +17,7 @@ import nodemailer from "nodemailer";
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:5175',
+    origin: 'https://aithinkapp.vercel.app',
     credentials: true,
     methods: ['GET','POST','PUT', 'PATCH','DELETE'],
 }));
