@@ -30,10 +30,9 @@ export const AppContextProvider = ({children}) =>{
         try{
             const res = await axios.get("https://ai-think-app.vercel.app/api/home", { withCredentials: true });
             setUser(res.data.details);
-            
+            console.log(res.data.details);
         }catch(err){
             console.log(err.msg);
-            navigate("/login");
         }
         
     }

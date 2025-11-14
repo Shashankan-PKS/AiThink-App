@@ -68,7 +68,7 @@ const ChatBox = () => {
             { role: "user", content : prompt, timestamp: Date.now(), isImage: false},
         ]);
         try {
-            const res = await axios.post("http://localhost:5000/api/aichat", {chatId, prompt}, { withCredentials: true })
+            const res = await axios.post("https://ai-think-app.vercel.app/api/aichat", {chatId, prompt}, { withCredentials: true })
             setLoading(false);
             setMessages((prev) => [
                 ...prev,
