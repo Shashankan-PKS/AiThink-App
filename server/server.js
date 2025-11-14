@@ -238,7 +238,7 @@ app.patch("/api/resetpassword",verifyResetToken, async(req, res) => {
             return res.status(400).send({ msg : "Email not found! , Please Register"})
         }else{
             await UserData.updateOne({user_email : vemail},{$set :{user_password : hashed, reset_otp : ""}})
-            res.clearCookie("resetToken", { httpOnly: true, secure: false, sameSite: "Lax" });
+            res.clearCookie("resetToken", { httpOnly: true, secure: true, sameSite: "Lax" });
             return res.status(201).send({ msg : "Password Updated successfully"})
         }
     }catch(err){
@@ -343,7 +343,7 @@ app.post("/api/logout", (req, res) => {
 
     res.clearCookie("logtoken", {
         httpOnly: true,
-        secure: false,
+        secure: true,
         sameSite: "Lax",
         path: "/", 
     });
