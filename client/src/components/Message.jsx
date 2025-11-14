@@ -1,4 +1,4 @@
-import { IconButton } from '@mui/material'
+import IconButton from '@mui/material/IconButton'
 import React, { useEffect } from 'react'
 import EditIcon from '@mui/icons-material/Edit';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';

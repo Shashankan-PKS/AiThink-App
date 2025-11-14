@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { dummyChats, dummyUserData } from "../assets/assets.js";
 import axios from "axios";
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';

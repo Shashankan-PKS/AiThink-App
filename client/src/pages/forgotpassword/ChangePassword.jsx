@@ -1,4 +1,10 @@
-import { Box, Button, TextField, Typography, IconButton, InputAdornment,Snackbar } from "@mui/material";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import Snackbar from '@mui/material/Snackbar';
+import InputAdornment from '@mui/material/InputAdornment';
 import MuiAlert from "@mui/material/Alert";
 import './ForgotPassword.css'
 import { useEffect, useState } from "react";

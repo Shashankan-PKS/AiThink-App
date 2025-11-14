@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useAppContext } from '../context/Appcontext.jsx'
-import { Button, Drawer, IconButton, Tooltip, useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import Tooltip from '@mui/material/Tooltip';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import Drawer from '@mui/material/Drawer';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import PanoramaIcon from '@mui/icons-material/Panorama';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SearchIcon from '@mui/icons-material/Search';
-import { assets } from '../assets/assets.js';
 import actionSidebar from '../assets/Vector.png';
 import SettingsIcon from '@mui/icons-material/Settings';
 import axios from "axios";

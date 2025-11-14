@@ -1,8 +1,12 @@
-import { Box, Button, TextField, Typography, IconButton, InputAdornment,Snackbar  } from "@mui/material"
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from "@mui/material/Alert";
 import './ForgotPassword.css'
 import { useEffect, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import logo from '../../assets/Aithink_logo.png';
 import { useAppResetContext } from "../../context/ResetPasswordContext.jsx";
 
