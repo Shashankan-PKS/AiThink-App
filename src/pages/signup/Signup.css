@@ -1,0 +1,11 @@
+.sucontent{
+    padding: 20px;
+    justify-items: center;
+}
+.suContainer{
+    width: fit-content;
+    height: fit-content;
+    background-color: #4B0082;
+    justify-items: center;
+    border-radius: 10px;
+}
