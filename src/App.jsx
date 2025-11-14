@@ -16,6 +16,8 @@ import GetStarted from './pages/getstarted/GetStarted.jsx';
 const App = () => {
 
   const {user} = useAppContext();
+
+  
   return (
     <>
       <div>

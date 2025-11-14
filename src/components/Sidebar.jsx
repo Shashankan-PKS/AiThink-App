@@ -28,7 +28,7 @@ const Sidebar = () => {
     const deleteChat = async () => {
         const chatId = selectedChat?._id;
         try {
-            const res = await axios.post("http://localhost:5000/api/deleteChat", {chatId}, { withCredentials: true });
+            const res = await axios.post("https://ai-think-app.vercel.app/api/deleteChat", {chatId}, { withCredentials: true });
             await fetchUsersChats();
         } catch (error) {
             console.log(error)

@@ -33,7 +33,7 @@ function Signup(){
         e.preventDefault();
         
         try {
-            await axios.post("http://localhost:5000/api/registration", { name, email, password, cpassword });
+            await axios.post("https://ai-think-app.vercel.app/api/registration", { name, email, password, cpassword });
             setMessage("Registered successfully!");
             setSeverity("success");
             setOpen(true);

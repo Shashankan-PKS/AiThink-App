@@ -23,13 +23,13 @@ export const AppContextProvider = ({children}) =>{
     const isXs = useMediaQuery(theme.breakpoints.down('md'));
 
     const login = async (email, password) => {
-        const res = await axios.post("http://localhost:5000/api/login", { email, password }, { withCredentials: true });
+        const res = await axios.post("https://ai-think-app.vercel.app/api/login", { email, password }, { withCredentials: true });
         return res.data;
     };
 
     const fetchUser = async () => {
         try{
-            const res = await axios.get("http://localhost:5000/api/home", { withCredentials: true });
+            const res = await axios.get("https://ai-think-app.vercel.app/api/home", { withCredentials: true });
             setUser(res.data.details);
             
         }catch(err){
@@ -41,7 +41,7 @@ export const AppContextProvider = ({children}) =>{
 
     const createNewChat = async () => {
         try{
-            await axios.get("http://localhost:5000/api/createChat", { withCredentials: true } );
+            await axios.get("https://ai-think-app.vercel.app/api/createChat", { withCredentials: true } );
             await fetchUsersChats();
             setMbDrawerOpen(false);
         }catch(err){
@@ -51,7 +51,7 @@ export const AppContextProvider = ({children}) =>{
 
     const fetchUsersChats = async () => {
         try{
-            const res = await axios.get("http://localhost:5000/api/getChat",{ withCredentials: true });
+            const res = await axios.get("https://ai-think-app.vercel.app/api/getChat",{ withCredentials: true });
             setChats(res.data.chats);
             if(res.data.chats.length === 0){
                 await createNewChat();
@@ -67,7 +67,7 @@ export const AppContextProvider = ({children}) =>{
 
     const chatPost = async (chatid, message) => {
         try{
-            const res = await axios.post("http://localhost:5000/api/aichat", {chatid, message}, { withCredentials: true })
+            const res = await axios.post("https://ai-think-app.vercel.app/api/aichat", {chatid, message}, { withCredentials: true })
             return res.data;
         }catch(err){
             console.log(err)
@@ -76,7 +76,7 @@ export const AppContextProvider = ({children}) =>{
 
     const logout = async () => {
         try {
-            await axios.post("http://localhost:5000/api/logout", {}, { withCredentials: true });
+            await axios.post("https://ai-think-app.vercel.app/api/logout", {}, { withCredentials: true });
             setUser(null);
             navigate("/login");
         } catch (err) {

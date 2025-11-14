@@ -25,7 +25,7 @@ function ChangePassword(){
     useEffect(() => {
         const fetchEmail = async () => {
             try {
-            const res = await axios.get("http://localhost:5000/api/getEmailFromToken", { withCredentials: true });
+            const res = await axios.get("https://ai-think-app.vercel.app/api/getEmailFromToken", { withCredentials: true });
             setVEmail(res.data.email);
             } catch (err) {
             console.log(err); 

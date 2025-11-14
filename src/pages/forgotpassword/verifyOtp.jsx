@@ -23,7 +23,7 @@ function VerifyOtp(){
 
     const fetchEmail = async () => {
         try {
-        const res = await axios.get("http://localhost:5000/api/getEmailFromToken",{withCredentials: true });
+        const res = await axios.get("https://ai-think-app.vercel.app/api/getEmailFromToken",{withCredentials: true });
         setDummy(res.data);
         } catch (err) {
         console.log(err);

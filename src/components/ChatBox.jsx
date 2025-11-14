@@ -72,15 +72,6 @@ const ChatBox = () => {
         }
     };
 
-    const deleteChat = async () => {
-        const chatId = selectedChat?._id;
-        try {
-            const res = await axios.post("http://localhost:5000/api/deleteChat", {chatId}, { withCredentials: true });
-            await fetchUsersChats();
-        } catch (error) {
-            console.log(error)
-        }
-    }
 
     useEffect(() => {
         if(selectedChat){
