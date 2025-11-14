@@ -92,7 +92,7 @@ app.post("/api/login", async (req,res) => {
 
     res.cookie("logtoken", token, {
         httpOnly: true,
-        secure: false,
+        secure: true,
         sameSite: "Lax",
         maxAge: 24 * 60 * 60 * 1000 
     });
@@ -126,7 +126,7 @@ app.post("/api/verifyemail", async(req, res) => {
 
     res.cookie("resetToken", resetToken, {
     httpOnly: true,
-    secure: false,
+    secure: true,
     sameSite: "Lax",
     maxAge: 15 * 60 * 1000 
     });
