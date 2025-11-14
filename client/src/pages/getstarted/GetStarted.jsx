@@ -1,5 +1,5 @@
 import { Box, CircularProgress, Typography } from '@mui/material'
-import logo from '../../assets/Frame1086949.png'
+import logo from '../../assets/Aithink_logo.png';
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
