@@ -92,7 +92,7 @@ const ChatBox = () => {
         if(user === null){
             navigate("/login")
         }
-    })
+    },[user])
 
     useEffect(() =>{
         if(containerRef.current){

@@ -22,8 +22,13 @@ export const AppContextProvider = ({children}) =>{
     const isXs = useMediaQuery(theme.breakpoints.down('md'));
 
     const login = async (email, password) => {
-        const res = await axios.post("http://localhost:5000/api/login", { email, password }, { withCredentials: true });
-        return res.data;
+        try{
+            const res = await axios.post("http://localhost:5000/api/login", { email, password }, { withCredentials: true });
+            setUser(res.data.details);
+            return res.data;
+        }catch(err){
+            console.log(err.msg)
+        }
     };
 
     const fetchUser = async () => {
@@ -94,7 +99,7 @@ export const AppContextProvider = ({children}) =>{
 
     useEffect(() => {
         fetchUser()
-    }, [])
+    }, [user])
     
 
     const value = {
