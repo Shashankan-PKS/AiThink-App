@@ -17,7 +17,7 @@ export const AppContextProvider = ({children}) =>{
     const [chats, setChats] = useState([]);
     const [selectedChat, setSelectedChat] = useState(null);
     const [DrawerOpen , setDrawerOpen] = useState(true);
-    const [MbDrawerOpen, setMbDrawerOpen] = useState(false)
+    const [MbDrawerOpen, setMbDrawerOpen] = useState(true)
     const theme = useTheme();
     const isXs = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -35,7 +35,6 @@ export const AppContextProvider = ({children}) =>{
         try{
             const res = await axios.get("http://localhost:5000/api/home", { withCredentials: true });
             setUser(res.data.details);
-            console.log(res.data.details);
         }catch(err){
             console.log(err.msg);
         }
@@ -99,7 +98,7 @@ export const AppContextProvider = ({children}) =>{
 
     useEffect(() => {
         fetchUser()
-    }, [user])
+    },[])
     
 
     const value = {
