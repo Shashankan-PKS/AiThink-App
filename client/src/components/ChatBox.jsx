@@ -68,7 +68,7 @@ const ChatBox = () => {
             { role: "user", content : prompt, timestamp: Date.now(), isImage: false},
         ]);
         try {
-            const res = await axios.post("https://ai-think-app.vercel.app/api/aichat", {chatId, prompt}, { withCredentials: true })
+            const res = await axios.post("http://localhost:5000/api/aichat", {chatId, prompt}, { withCredentials: true })
             setLoading(false);
             setMessages((prev) => [
                 ...prev,
@@ -244,10 +244,47 @@ const ChatBox = () => {
             <div>
                 <Box sx={{width:"100%", padding: "10px"}}>
                     <Box>
-                        <Box sx={{ width : "90%", border : "3px solid #4B0082", padding : "10px",
+                        <Box sx={{ width : "100%", border : "3px solid #4B0082", padding : "10px",
                             borderRadius : "30px", transition: "width 0.3s ease-in-out"
                         }}>
-                            <TextField variant="standard" multiline fullWidth maxRows={5} placeholder={isXsmb ? "Ask Attral" : "Ask Aattral anything about Aerospace Industry"}
+                            {/* <TextField variant="standard" multiline fullWidth maxRows={5} placeholder={isXsmb ? "Ask AiThink" : "Ask AiThink anything"}
+                            value={prompt} onChange={(e) => setPrompt(e.target.value)}  InputProps={{disableUnderline : true,
+                                sx: {
+                                    "& textarea": {
+                                        fontFamily : "Epilogue",
+                                        color : "#4B0082",
+                                        fontWeight : "500",
+                                        resize: "none",
+                                        overflowY: "auto",              
+                                        pl: "10px",
+                                        pr: "10px",
+                                        pb: "10px",
+                                        "&::-webkit-scrollbar": {
+                                            width : "5px",
+                                        },
+                                        "&::-webkit-scrollbar-track": {
+                                            backgroundColor: "rgb(199, 213, 255)",
+                                            borderRadius: "10px",
+                                        },
+                                        "&::-webkit-scrollbar-thumb": {
+                                            backgroundColor: "rgba(227, 235, 255, 1)",
+                                            borderRadius: "10px",
+                                        },
+                                        "&::-webkit-scrollbar-thumb:hover": {
+                                            backgroundColor: "rgba(192, 208, 254, 1)",
+                                        },
+                                    }
+                                }
+                            }}/> */}
+                            <Box sx={{ display : "flex", alignItems : "center"}}>
+                                <Box sx={{ flexGrow : 1, display : "flex", alignItems : "center"}}>
+                                    <Box>
+                                        <IconButton disableRipple>
+                                            <AddCircleIcon sx={{ color : "#4B0082", fontSize : "30px"}}/>
+                                        </IconButton>
+                                    </Box>
+                                </Box>
+                                <TextField variant="standard" multiline fullWidth maxRows={5} placeholder={isXsmb ? "Ask AiThink" : "Ask AiThink anything"}
                             value={prompt} onChange={(e) => setPrompt(e.target.value)}  InputProps={{disableUnderline : true,
                                 sx: {
                                     "& textarea": {
@@ -276,136 +313,6 @@ const ChatBox = () => {
                                     }
                                 }
                             }}/>
-                            <Box sx={{ display : "flex", alignItems : "center"}}>
-                                <Box sx={{ flexGrow : 1, display : "flex", alignItems : "center"}}>
-                                    <Box>
-                                        <IconButton disableRipple>
-                                            <AddCircleIcon sx={{ color : "#4B0082", fontSize : "30px"}}/>
-                                        </IconButton>
-                                    </Box>
-                                    <Box sx={{ display : { xs: "none", sm : "none" ,md : "flex"}, gap : 1}}>
-                                        <Button variant="outlined" startIcon={<SearchIcon />} sx={{color : "#4B0082", textTransform : "capitalize", border : "2px solid #4B0082", borderRadius : "50px"}}>
-                                            <Typography sx={{fontFamily : "Poppins", "@media (max-width:1050px) and (min-width:900px)": {
-                                                fontSize: "12px", 
-                                                fontWeight: 600,
-                                            }, }}>
-                                                Deep Research
-                                            </Typography>
-                                        </Button>
-                                        <Button variant="outlined" startIcon={<PanoramaIcon />} sx={{color : "#0D1B4C", textTransform : "capitalize", fontFamily : "Poppins", border : "2px solid #4B0082", borderRadius : "50px"}}>
-                                            <Typography sx={{fontFamily : "Poppins", "@media (max-width:1050px) and (min-width:900px)": {
-                                                fontSize: "12px",
-                                                fontWeight: 600, 
-                                            }, }}>
-                                                Create Image
-                                            </Typography>
-                                        </Button>
-                                        <Button variant="outlined" startIcon={<LanguageIcon />} sx={{color : "#4B0082", textTransform : "capitalize", fontFamily : "Poppins", border : "2px solid #4B0082", borderRadius : "50px"}}>
-                                            <Typography sx={{fontFamily : "Poppins", "@media (max-width:1050px) and (min-width:900px)": {
-                                                fontSize: "12px",
-                                                fontWeight: 600, 
-                                            }, }}>
-                                                Web Search
-                                            </Typography>
-                                        </Button>
-                                    </Box>
-                                    <Box sx={{ display : { xs: "none", sm : "flex" ,md : "none"}, gap : 1}}>
-                                        <Button variant="outlined" startIcon={<SearchIcon />} sx={{color : "#4B0082", textTransform : "capitalize", fontFamily : "Poppins", border : "2px solid #4B0082", borderRadius : "50px"}}>Deep Research</Button>
-                                        <Box>
-                                            <IconButton  disableRipple sx={{ backgroundColor : "#4B0082",  ml: 2}}
-                                                onClick={handlesmBtnOpen}
-                                                aria-controls={opensmtextbtn ? 'text-menu' : undefined}
-                                                aria-haspopup="true"
-                                                aria-expanded={opensmtextbtn ? 'true' : undefined}
-                                            >
-                                                <MoreVertIcon sx={{ color : "rgb(227, 235, 255)" , fontSize : "20px"}}/>
-                                            </IconButton>
-                                            <Menu
-                                                anchorEl={opensmTextBtn}
-                                                id="text-menu"
-                                                open={opensmtextbtn}
-                                                onClose={handlesmBtnOpen}
-                                                onClick={handlesmBtnClose}
-                                                slotProps={{
-                                                paper: {
-                                                    elevation: 0,
-                                                    sx: {
-                                                    overflow: 'visible',
-                                                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                                                    mt: -15,
-                                                    ml : 10,
-                                                    color : "rgba(234, 239, 255, 1)",
-                                                    backgroundColor : "#4B0082", 
-                                                    
-                                                    '& .MuiAvatar-root': {
-                                                        width: 32,
-                                                        height: 32,
-                                                    },
-                                                    },
-                                                },
-                                                }}
-                                                transformOrigin={{ horizontal: 'center', vertical: 'top' }}
-                                                anchorOrigin={{ horizontal: 'center', vertical: 'bottom' }}
-                                            >
-                                                <MenuItem sx={{fontFamily : "Poppins",fontWeight : "500",padding : "15px",}} onClick={handlesmBtnClose}>
-                                                    <PanoramaIcon sx={{mr : 1}} /> Create Image
-                                                </MenuItem>
-                                                <MenuItem onClick={handlesmBtnClose} sx={{fontFamily : "Poppins",fontWeight : "500",padding : "15px"}}>
-                                                    <LanguageIcon sx={{mr : 1}} /> Web Search
-                                                </MenuItem>
-                                            </Menu>
-                                        </Box>
-                                    </Box>
-                                    <Box sx={{ display : { xs: "flex", sm : "none" ,md : "none"}}}>
-                                        <Box>
-                                            <IconButton  disableRipple sx={{ backgroundColor : "rgb(25, 42, 86)",  ml: 2}}
-                                                onClick={handlexsBtnOpen}
-                                                aria-controls={openxstextbtn ? 'text-menu' : undefined}
-                                                aria-haspopup="true"
-                                                aria-expanded={openxstextbtn ? 'true' : undefined}
-                                            >
-                                                <MoreVertIcon sx={{ color : "rgb(227, 235, 255)" , fontSize : "20px"}}/>
-                                            </IconButton>
-                                            <Menu
-                                                anchorEl={openxsTextBtn}
-                                                id="text-menu"
-                                                open={openxstextbtn}
-                                                onClose={handlexsBtnOpen}
-                                                onClick={handlexsBtnClose}
-                                                slotProps={{
-                                                paper: {
-                                                    elevation: 0,
-                                                    sx: {
-                                                    overflow: 'visible',
-                                                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                                                    mt: -15,
-                                                    ml : -10,
-                                                    color : "rgba(234, 239, 255, 1)",
-                                                    backgroundColor : "#4B0082", 
-                                                    
-                                                    '& .MuiAvatar-root': {
-                                                        width: 32,
-                                                        height: 32,
-                                                    },
-                                                    },
-                                                },
-                                                }}
-                                                transformOrigin={{ horizontal: 'center', vertical: 'top' }}
-                                                anchorOrigin={{ horizontal: 'center', vertical: 'bottom' }}
-                                            >
-                                                <MenuItem sx={{fontFamily : "Poppins",fontWeight : "500",padding : "15px",}} onClick={handlexsBtnClose}>
-                                                    <SearchIcon sx={{mr : 1}} /> Deep Research
-                                                </MenuItem>
-                                                <MenuItem sx={{fontFamily : "Poppins",fontWeight : "500",padding : "15px",}} onClick={handlexsBtnClose}>
-                                                    <PanoramaIcon sx={{mr : 1}} /> Create Image
-                                                </MenuItem>
-                                                <MenuItem onClick={handlexsBtnClose} sx={{fontFamily : "Poppins",fontWeight : "500",padding : "15px"}}>
-                                                    <LanguageIcon sx={{mr : 1}} /> Web Search
-                                                </MenuItem>
-                                            </Menu>
-                                        </Box>
-                                    </Box>
-                                </Box>
                                 <Box sx={{padding: "10px"}}>
                                     <IconButton disableRipple onClick={handleSend} sx={{ backgroundColor : "#4B0082", }}>
                                         <SendIcon sx={{ color : "rgb(227, 235, 255)" , fontSize : "18px"}}/>

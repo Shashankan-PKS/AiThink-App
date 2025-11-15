@@ -39,7 +39,7 @@ function Signup(){
         e.preventDefault();
         
         try {
-            await axios.post("https://ai-think-app.vercel.app/api/registration", { name, email, password, cpassword });
+            await axios.post("http://localhost:5000/api/registration", { name, email, password, cpassword });
             setMessage("Registered successfully!");
             setSeverity("success");
             setOpen(true);
@@ -82,7 +82,7 @@ function Signup(){
                             <img src={logo} alt="Logo" style={{width : "800px",  maxWidth: "90%" }}/>
                         </Box>
                         <Box  sx={{ paddingBottom: "10px" }}>
-                            <Typography sx={{color : "#4B0082",fontFamily: "Epilogue"}}>Powered by <span style={{fontWeight: "800"}}> Techbrain Networks </span></Typography>
+                            <Typography sx={{color : "#4B0082",fontFamily: "Epilogue"}}>Powered by <span style={{fontWeight: "800"}}> Shashankan </span></Typography>
                         </Box>    
                         
                     </Box>

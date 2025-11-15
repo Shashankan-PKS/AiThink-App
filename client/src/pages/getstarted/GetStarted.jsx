@@ -12,10 +12,10 @@ function GetStarted() {
   useEffect(()=> {
     const timeoutId = setTimeout(() => {
       navigate('/login')
-    }, 5000)
+    }, 6000);
 
     return () => clearTimeout(timeoutId);
-  })
+  },[])
 
   return (
     <>

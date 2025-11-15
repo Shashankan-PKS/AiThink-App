@@ -13,22 +13,22 @@ export const ResetPassProvider = ({ children }) => {
     
 
     const verifyEmail = async (vemail) => {
-        const res = await axios.post("https://ai-think-app.vercel.app/api/verifyemail", {vemail}, { withCredentials: true });
+        const res = await axios.post("http://localhost:5000/api/verifyemail", {vemail}, { withCredentials: true });
         return res.data;
     }
 
     const verifyotp = async (otp) => {
-        const res = await axios.post("https://ai-think-app.vercel.app/api/verifyotp", {otp}, { withCredentials: true });
+        const res = await axios.post("http://localhost:5000/api/verifyotp", {otp}, { withCredentials: true });
         return res.data;
     }
 
     const changePassword = async (npass,cpass) => {
-        const res = await axios.patch("https://ai-think-app.vercel.app/api/resetpassword", {npass,cpass}, { withCredentials: true });
+        const res = await axios.patch("http://localhost:5000/api/resetpassword", {npass,cpass}, { withCredentials: true });
         return res.data;
     }
 
     const resendOtp = async() => {
-        const res = await axios.patch("https://ai-think-app.vercel.app/api/resendOtp", {}, { withCredentials: true });
+        const res = await axios.patch("http://localhost:5000/api/resendOtp", {}, { withCredentials: true });
         return res.data;
     }
 

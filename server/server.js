@@ -17,7 +17,7 @@ import nodemailer from "nodemailer";
 const app = express();
 
 app.use(cors({
-    origin: 'https://aithinkapp.vercel.app',
+    origin: 'http://localhost:5173',
     credentials: true,
     methods: ['GET','POST','PUT', 'PATCH','DELETE'],
 }));
@@ -92,7 +92,7 @@ app.post("/api/login", async (req,res) => {
 
     res.cookie("logtoken", token, {
         httpOnly: true,
-        secure: true,
+        secure: false,
         sameSite: "Lax",
         maxAge: 24 * 60 * 60 * 1000 
     });
@@ -126,7 +126,7 @@ app.post("/api/verifyemail", async(req, res) => {
 
     res.cookie("resetToken", resetToken, {
     httpOnly: true,
-    secure: true,
+    secure: false,
     sameSite: "Lax",
     maxAge: 15 * 60 * 1000 
     });
@@ -238,7 +238,7 @@ app.patch("/api/resetpassword",verifyResetToken, async(req, res) => {
             return res.status(400).send({ msg : "Email not found! , Please Register"})
         }else{
             await UserData.updateOne({user_email : vemail},{$set :{user_password : hashed, reset_otp : ""}})
-            res.clearCookie("resetToken", { httpOnly: true, secure: true, sameSite: "Lax" });
+            res.clearCookie("resetToken", { httpOnly: true, secure: false, sameSite: "Lax" });
             return res.status(201).send({ msg : "Password Updated successfully"})
         }
     }catch(err){
@@ -343,7 +343,7 @@ app.post("/api/logout", (req, res) => {
 
     res.clearCookie("logtoken", {
         httpOnly: true,
-        secure: true,
+        secure: false,
         sameSite: "Lax",
         path: "/", 
     });
