@@ -38,7 +38,6 @@ export const AppContextProvider = ({children}) =>{
         }catch(err){
             console.log(err.msg);
         }
-        
     }
 
     const createNewChat = async () => {

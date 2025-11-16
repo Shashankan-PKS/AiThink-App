@@ -21,7 +21,7 @@ It includes a complete authentication system with onboarding, email verification
 
 | Intro Page | Login Page | Register Page | Forgot Password |
 |-----------|------------|----------------|-----------------|
-| ![](client/src/assets/image-1.jpg) | ![](client/src/assets/image-2.jpg) | ![](client/src/assets/image-3.jpg) | ![](client/src/assets/image-4.jpg) |
+| ![](./client/src/assets/image-1.png) | ![](client/src/assets/image-2.jpg) | ![](client/src/assets/image-3.jpg) | ![](client/src/assets/image-4.jpg) |
 
 ---
 
