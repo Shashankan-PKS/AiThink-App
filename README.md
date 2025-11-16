@@ -37,29 +37,29 @@ It includes a complete authentication system with onboarding, email verification
 
 | Home Page | Chat List | Chat Window |
 |-----------|-----------|--------------|
-| ![](images/home.png) | ![](images/chat-list.png) | ![](images/chat-window.png) |
+| ![](./client/src/assets/image-7.png) | ![](./client/src/assets/image-13.png) | ![](./client/src/assets/image-9.png) |
 
 ---
 
-### ⭐ Additional Screens
+### ⭐ Additional Images
 
-| Screen 10 | Screen 11 | Screen 12 | Screen 13 |
+| Image 1 | Image 2 | Image 3 | 
 |-----------|-----------|-----------|-----------|
-| ![](images/s10.png) | ![](images/s11.png) | ![](images/s12.png) | ![](images/s13.png) |
+| ![](./client/src//assets/image-10.png) | ![](./client/src/assets/image-11.png) | ![](./client/src/assets/image-12.png) |
 
-| Screen 14 | Screen 15 | Screen 16 | Screen 17 |
-|-----------|-----------|-----------|-----------|
-| ![](images/s14.png) | ![](images/s15.png) | ![](images/s16.png) | ![](images/s17.png) |
+| Image 4 | Image 5 |
+|-----------|-----------|
+| ![](./client/src/assets/image-14.png) | ![](./client/src/assets/image-8.png)  | 
 
 ---
 
 ## 🛠 Tech Stack
 
 - **Frontend:** React.js  
-- **Backend:** Node.js / Express *(optional)*  
+- **Backend:** Node.js , Express   
 - **UI Library:** Material UI  
 - **Authentication:** JWT, Email OTP  
-- **Hosting:** Vercel / Render  
+- **Database:** Mongo Db
 
 ---
 
@@ -68,5 +68,9 @@ It includes a complete authentication system with onboarding, email verification
 ```bash
 git clone https://github.com/your-username/Aithink-app.git
 cd Aithink-app
+cd client
 npm install
 npm run dev
+cd server
+npm install
+npm run start
