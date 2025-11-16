@@ -19,17 +19,17 @@ It includes a complete authentication system with onboarding, email verification
 
 ### ⭐ Intro & Authentication Flow
 
-| Intro Page | Login Page | Register Page | Forgot Password |
-|-----------|------------|----------------|-----------------|
-| ![](./client/src/assets/image-1.png) | ![](./client/src/assets/image-2.pg) | ![](./client/src/assets/image-3.png) | ![](client/src/assets/image-4.jpg) |
+| Intro Page | Login Page | Register Page |
+|-----------|------------|----------------|
+| ![](./client/src/assets/image-1.png) | ![](./client/src/assets/image-2.png) | ![](./client/src/assets/image-3.png) |
 
 ---
 
 ### ⭐ Verification Screens
 
-| Email Verify | OTP Input | OTP Success | Change Password |
-|-------------|-----------|--------------|------------------|
-| ![](client/src/assets/image-5.jpg) | ![](client/src/assets/image-6.jpg) | ![](client/src/assets/image-7.jpg) | ![](client/src/assets/image-8.jpg) |
+| Email Verify | OTP Input | Change Password |
+|-------------|-----------|------------------|
+| ![](./client/src/assets/image-4.png) | ![](./client/src/assets/image-5.png) | ![](./client/src/assets/image-6.png) |
 
 ---
 
