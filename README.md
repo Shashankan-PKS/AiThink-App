@@ -44,7 +44,7 @@ It includes a complete authentication system with onboarding, email verification
 ### ⭐ Additional Images
 
 | Image 1 | Image 2 | Image 3 | 
-|-----------|-----------|-----------|-----------|
+|-----------|-----------|-----------|
 | ![](./client/src//assets/image-10.png) | ![](./client/src/assets/image-11.png) | ![](./client/src/assets/image-12.png) |
 
 | Image 4 | Image 5 |
